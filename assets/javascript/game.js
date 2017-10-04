@@ -23,18 +23,6 @@ var userLetter = document.getElementById("guesses-so-far");
 // Listening for key press from user.
 window.addEventListener("keyup", userLetter, false);
 
-
-document.onkeyup = function(event) {
-    userLetter.textContent = event.key;
-  };
-
-// If users letter matches computers letter add to Wins counter and restart guesses counter.
-if (psychicLetter == userLetter) {
-    console.log("You Win!") && wins + 1;
-} else {
-    console.log("You lose!");
-}
-
 // Add +1 to wins HTML (just updates whatever i have as the var wins.  Not adding to it)
 function winsFunction(wins) {
     var elWins = document.getElementById('wins');
@@ -44,15 +32,37 @@ function winsFunction(wins) {
 // Adds 1 to losses HTML.
 function lossesFunction(losses) {
     var elosses = document.getElementById('losses');
-    ellosses.innerHTML = losses;
+    elosses.innerHTML = losses;
 }
 
-// If users letter doesnt equal computers letter subtract from guesses left counter.     
-
-//if guesses left counter reaches zero a point goes into Losses counter and guesses start over.
-if (guessesLeft === 0) {
-    losses + 1 && guessesLeft === 10;
+// Subtract from guesses left.
+function guessesLeftFunction(guessesLeft) {
+    guessesLeft - 1;
+    var elGuessesLeft = document.getElementById('guesses-left');
+    elGuessesLeft.innerHTML = guessesLeft;
 }
+
+
+
+document.onkeyup = function(event) {
+    userLetter.textContent = event.key;
+
+    // If users letter matches computers letter add to Wins counter and restart guesses counter.
+    if (psychicLetter == userLetter) {
+        console.log("You Win!") && wins + 1;
+    } else {
+    // If users letter doesnt equal computers letter subtract from guesses left counter. 
+        console.log("You lose!") && guessesLeftFunction(guessesLeft);
+    }
+
+    //if guesses left counter reaches zero a point goes into Losses counter and guesses start over.
+    if (guessesLeft === 0) {
+        losses + 1 && guessesLeft === 10;
+    }
+
+  };
+    
+
 
 // Print out letters guessed so far on screen.  Once guesses left gets to zero start over.
 function lettersGuessed(guessedSoFar) {
