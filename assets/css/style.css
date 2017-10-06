@@ -1,10 +1,11 @@
 /* GLOBAL */
 
 body {
-    background: black !important;
+    background: url("../img/background.jpg");
     color: white !important;
     font-size: 25px !important;
     font-family: 'Rye', cursive !important;
+
 }
 
 h1 {
