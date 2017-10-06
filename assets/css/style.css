@@ -1,0 +1,47 @@
+/* GLOBAL */
+
+body {
+    background: black !important;
+    color: white !important;
+    font-size: 25px !important;
+    font-family: 'Rye', cursive !important;
+}
+
+h1 {
+    font-size: 50px !important;
+    text-shadow: 2px 2px 5px white;
+}
+
+
+/* HEADER */
+
+.top-header {
+    border: solid;
+    border-bottom-width: 5px;
+    border-bottom-color: red;
+    margin-bottom: 40px;
+}
+
+/* HEADER IMAGE WITH COOL GLOW! */
+.header-image img {
+    border-radius: 35%;
+    margin: auto;
+    height: 300px;
+    box-shadow:
+        0 0 60px 30px #fff,  
+        0 0 100px 60px #f0f,
+        0 0 140px 90px #0ff;
+
+
+}
+
+
+/* SECTION */
+
+.well {
+    background: rgb(255, 0, 0) !important;
+}
+
+.well h2 {
+    text-align: center;
+}
